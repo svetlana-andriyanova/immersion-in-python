@@ -1,0 +1,2 @@
+ERROR, 2023-11-12 09:09:08,614, Ошибка Invalid name: None. Name should be a non-empty string. в функции _validate_name при аргументах (<__main__.Employee object at 0x00000171D6A86AD0>, None, 'Middle Name'), {}
+ERROR, 2023-11-12 09:09:08,614, Ошибка Invalid id: 10. Id should be a 6-digit positive integer between 100000 and 999999. в функции _validate_id при аргументах (<__main__.Employee object at 0x00000171D6A86AD0>, 10), {}
