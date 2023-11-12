@@ -18,12 +18,14 @@ class Person:
     @log_dec
     def _validate_name(self, name, field_name):
         if not name or not isinstance(name, str):
-            raise InvalidNameError(f'Invalid name: {name}. Name should be a non-empty string.')
+            raise InvalidNameError(f'Invalid name: {name}. '
+                                   f'Name should be a non-empty string.')
 
     @log_dec
     def _validate_age(self, age):
         if not isinstance(age, int) or age <= 0:
-            raise InvalidAgeError(f'Invalid age: {age}. Age should be a positive integer.')
+            raise InvalidAgeError(f'Invalid age: {age}. '
+                                  f'Age should be a positive integer.')
 
     def birthday(self):
         self.age += 1
@@ -32,7 +34,8 @@ class Person:
         return self.age
 
     def __str__(self):
-        return f'{self.first_name} {self.middle_name} {self.last_name}, Age: {self.age}'
+        return f'{self.first_name} {self.middle_name} {self.last_name}, ' \
+               f'Age: {self.age}'
 
 
 class Employee(Person):
@@ -45,22 +48,25 @@ class Employee(Person):
     def _validate_id(self, id):
         if not isinstance(id, int) or id < 100000 or id > 999999:
             raise InvalidIdError(
-                f'Invalid id: {id}. Id should be a 6-digit positive integer between 100000 and 999999.')
+                f'Invalid id: {id}. Id should be a 6-digit positive '
+                f'integer between 100000 and 999999.')
 
     def get_level(self):
         return sum(map(int, str(self.id))) % 7
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Person and Employee information')
+    parser = argparse.ArgumentParser(description='Person and Employee info')
     parser.add_argument('--last_name', '-ln', type=str, help='Last Name')
     parser.add_argument('--first_name', '-fn', type=str, help='First Name')
     parser.add_argument('--middle_name', '-mn', type=str, help='Middle Name')
     parser.add_argument('--age', '-a', type=int, help='Age')
     parser.add_argument('--id', '-i', type=int, help='Employee ID')
     args = parser.parse_args()
-    employee = Employee(args.last_name, args.first_name, args.middle_name, args.age, args.id)
-    return f'Employee information:\n{employee}\nEmployee Level:\n{employee.get_level()}'
+    employee = Employee(args.last_name, args.first_name,
+                        args.middle_name, args.age, args.id)
+    return f'Employee information:\n{employee}' \
+           f'\nEmployee Level:\n{employee.get_level()}'
 
 
 
