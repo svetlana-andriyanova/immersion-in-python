@@ -1,0 +1,5 @@
+ERROR, 2023-11-12 13:29:58,329, Ошибка Invalid name: None. Name should be a non-empty string. в функции _validate_name при аргументах (<__main__.Employee object at 0x0000024422C2BC10>, None, 'Last Name'), {}
+ERROR, 2023-11-12 13:29:58,394, Ошибка Invalid name: None. Name should be a non-empty string. в функции _validate_name при аргументах (<__main__.Employee object at 0x0000024422C2BC10>, None, 'First Name'), {}
+ERROR, 2023-11-12 13:29:58,394, Ошибка Invalid name: None. Name should be a non-empty string. в функции _validate_name при аргументах (<__main__.Employee object at 0x0000024422C2BC10>, None, 'Middle Name'), {}
+ERROR, 2023-11-12 13:29:58,394, Ошибка Invalid age: None. Age should be a positive integer. в функции _validate_age при аргументах (<__main__.Employee object at 0x0000024422C2BC10>, None), {}
+ERROR, 2023-11-12 13:29:58,395, Ошибка Invalid id: None. Id should be a 6-digit positive integer between 100000 and 999999. в функции _validate_id при аргументах (<__main__.Employee object at 0x0000024422C2BC10>, None), {}
